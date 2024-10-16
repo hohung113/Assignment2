@@ -102,8 +102,7 @@ namespace PizzaStore.Pages.Product
             await _context.SaveChangesAsync();
             HttpContext.Session.SetInt32("CartItemCount", cartItems.Count());
             //var age = HttpContext.Session.GetInt32("CartItemCount").ToString();
-
-            return new JsonResult(new { success = true });
+            return RedirectToPage("Index");
         }
     }
 }

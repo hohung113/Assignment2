@@ -64,7 +64,7 @@ namespace PizzaStore.Pages.Login
                 }
                 if (!string.IsNullOrEmpty(returnUrl))
                 {
-                    return RedirectToPage(returnUrl);
+                    return Redirect(returnUrl);
                 }
                 else
                 {

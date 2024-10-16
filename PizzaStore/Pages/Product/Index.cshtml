@@ -70,14 +70,6 @@
                     {
                         <a asp-page="./Details" asp-route-id="@item.ProductID">Details</a>
                         <br />
-                     @*    <form method="post" asp-page-handler="AddToCart" id="form_@item.ProductID">
-                            <input type="number" name="quantity" id="quantity_@item.ProductID" min="1" value="1" style="width: 50px;" />
-                            <input type="hidden" name="productId" value="@item.ProductID" />
-                            <input type="hidden" id="availableQuantity_@item.ProductID" value="@item.QuantityPerUnit" />
-                            <div class="form-group">
-                                <input type="submit" value="Add to Cart" class="btn btn-primary" />
-                            </div>
-                        </form> *@
                         <form method="post" asp-page-handler="AddToCart" id="form_@item.ProductID" data-ajax="true" data-ajax-method="post" data-ajax-mode="replace" data-ajax-update="#cart-response">
                             <input type="number" name="quantity" id="quantity_@item.ProductID" min="1" value="1" style="width: 50px;" />
                             <input type="hidden" name="productId" value="@item.ProductID" />
@@ -100,6 +92,9 @@
 </div>
 
 <script>
+
+
+
     document.addEventListener('DOMContentLoaded', function () {
         const forms = document.querySelectorAll('form[asp-page-handler="AddToCart"]');
 
