@@ -33,6 +33,10 @@
     <Folder Include="Pages\NewFolder\" />
     <Folder Include="Pages\OrderDetail\" />
     <Folder Include="Pages\Order\" />
+    <Folder Include="Utility\Momo\Config\" />
+    <Folder Include="Utility\Momo\Lib\" />
+    <Folder Include="Utility\Momo\Response\" />
+    <Folder Include="Utility\Momo\Request\" />
   </ItemGroup>
 
 </Project>

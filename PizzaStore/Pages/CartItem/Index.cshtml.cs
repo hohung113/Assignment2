@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using PizzaStore.Data;
 using PizzaStore.Models;
@@ -154,6 +155,11 @@ namespace PizzaStore.Pages.CartItem
                 }
             }
 
+            return RedirectToPage("/Product/Index");
+        }
+
+        public async Task<IActionResult> OnPostPaymentCallBack()
+        {
             return RedirectToPage("/Product/Index");
         }
     }
