@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -38,9 +39,19 @@ namespace PizzaStore.Pages.Accounts
             Account = account;
             return Page();
         }
-
+        [Authorize]
         public async Task<IActionResult> OnPostAsync()
         {
+            var adminAccount = await _context.Accounts.FirstOrDefaultAsync(it => it.Type == AccountType.Staff);
+            if (adminAccount.AccountID == Account.AccountID)
+            {
+                Account.Type = AccountType.Staff;
+            }
+            else
+            {
+                //Account.Type = AccountType.Member;
+                Account.Type = null;
+            }
             _context.Attach(Account).State = EntityState.Modified;
             try
             {

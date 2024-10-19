@@ -116,7 +116,9 @@ namespace PizzaStore.Pages.CartItem
                                 Password = account.Password,
                                 Phone = phone,
                             };
-
+                            // update role for account if buyed
+                            account.Type = AccountType.Member;
+                            _context.Attach(account).State = EntityState.Modified;
                             await _context.Customers.AddAsync(cus);
                             await _context.SaveChangesAsync();
                         }
