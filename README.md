@@ -1,1 +1,1 @@
-# Simple Project For PizzaStore
+# Simple Project For Pizza Store
