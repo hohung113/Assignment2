@@ -42,6 +42,11 @@
     <form method="post" asp-page-handler="Checkout" class="mt-3">
         <button type="button" class="btn btn-primary" onclick="openModal()">Checkout</button>
     </form>
+
+    <form method="post" asp-page-handler="Checkout" class="mt-3">
+        <input type="hidden" name="paymentType" value="VNPAY" />
+        <button type="submit" class="btn btn-primary">Checkout With VNPAY</button>
+    </form>
 }
 else
 {
